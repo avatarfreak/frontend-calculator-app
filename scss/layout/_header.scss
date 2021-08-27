@@ -1,0 +1,11 @@
+/*-------------------Header Section-----------------*/
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    color: var(--clr-text-heading);
+    font-size: var(--fs-size-lg);
+  }
+}
