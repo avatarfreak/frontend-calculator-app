@@ -1,0 +1,271 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+.theme-one {
+  /*----Theme One ----------*/
+  --clr-main-bg: hsl(222, 26%, 31%);
+  --clr-toggle-bg: hsl(223, 31%, 20%);
+  --clr-screen-bg: hsl(224, 36%, 15%);
+  --clr-text-heading: hsl(0, 0%, 100%);
+  --clr-key-bg-100: hsl(225, 21%, 49%);
+  --clr-key-shadow-100: hsl(224, 28%, 35%);
+  --clr-key-bg-120: hsl(6, 63%, 50%);
+  --clr-key-shadow-120: hsl(6, 70%, 34%);
+  --clr-key-bg-130: hsl(30, 25%, 89%);
+  --clr-key-shadow-130: hsl(28, 16%, 65%);
+  --clr-text-120: hsl(221, 14%, 31%);
+  --clr-text-100: hsl(0, 0%, 100%);
+}
+
+.theme-two {
+  /*---------------Theme Two-----------------*/
+  --clr-main-bg: hsl(0, 0%, 90%);
+  --clr-toggle-bg: hsl(0, 5%, 81%);
+  --clr-screen-bg: hsl(0, 0%, 93%);
+  --clr-text-heading: hsl(60, 10%, 19%);
+  --clr-key-bg-100: hsl(185, 42%, 37%);
+  --clr-key-shadow-100: hsl(185, 58%, 25%);
+  --clr-key-bg-120: hsl(25, 98%, 40%);
+  --clr-key-shadow-120: hsl(25, 99%, 27%);
+  --clr-key-bg-130: hsl(45, 7%, 89%);
+  --clr-key-shadow-130: hsl(35, 11%, 61%);
+  --clr-text-100: hsl(0, 0%, 100%);
+  --clr-text-120: hsl(60, 10%, 19%);
+}
+
+.theme-three {
+  /*---------------Theme Two-----------------*/
+  --clr-main-bg: hsl(268, 75%, 9%);
+  --clr-toggle-bg: hsl(268, 71%, 12%);
+  --clr-screen-bg: hsl(268, 71%, 12%);
+  --clr-text-heading: hsl(52, 100%, 62%);
+  --clr-key-bg-100: hsl(281, 89%, 26%);
+  --clr-key-shadow-100: hsl(285, 91%, 52%);
+  --clr-key-bg-120: hsl(176, 100%, 44%);
+  --clr-key-shadow-120: hsl(177, 92%, 70%);
+  --clr-key-bg-130: hsl(268, 47%, 21%);
+  --clr-key-shadow-130: hsl(290, 70%, 36%);
+  --clr-text-100: hsl(198, 20%, 13%);
+  --clr-text-110: hsl(0, 0, 100%);
+  --clr-text-120: hsl(52, 100%, 62%);
+}
+
+:root {
+  --fs-size-2xs: 0.75rem;
+  --fs-size-sm: 1rem;
+  --fs-size-md: 1.75rem;
+  --fs-size-lg: 2rem;
+  --fs-size-xl: 3rem;
+  --fw-weight-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Spartan", sans-serif;
+  background: var(--clr-main-bg);
+}
+
+.wrapper {
+  width: 37rem;
+  padding: 2rem 1rem;
+}
+
+:focus-visible {
+  outline: 2px dashed red;
+}
+
+a {
+  text-decoration: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--clr-text-heading);
+}
+
+.attribution a {
+  color: var(--clr-key-bg-120);
+}
+
+/*-----------Theme Switcher----------------*/
+input[type=radio] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+input[type=radio]:focus-visible ~ .slider-circle {
+  outline: 2px dashed red;
+}
+
+fieldset {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 4.5rem;
+  height: 1.5625rem;
+  border-radius: 1rem;
+  border: 0;
+  background: var(--clr-toggle-bg);
+  font-weight: var(--fw-weight-bold);
+}
+fieldset input:first-of-type:checked ~ .slider-circle {
+  transform: translateX(0rem);
+}
+fieldset input:nth-of-type(2):checked ~ .slider-circle {
+  transform: translateX(1.25rem);
+}
+fieldset input:last-of-type:checked ~ .slider-circle {
+  transform: translateX(2.75rem);
+}
+
+legend {
+  position: absolute;
+  display: inline-block;
+  left: -5rem;
+  font-size: var(--fs-size-2xs);
+  color: var(--clr-text-heading);
+  text-transform: uppercase;
+}
+
+label {
+  position: relative;
+  top: -2rem;
+  display: inline-block;
+  color: var(--clr-text-heading);
+  margin: auto;
+  cursor: pointer;
+}
+label::after {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  transform: translateX(-0.75rem);
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+}
+
+/*---------slider circle------------*/
+.slider-circle {
+  position: absolute;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  background: var(--clr-key-bg-120);
+  transition: transform 0.4s ease-in-out;
+  left: 7px;
+}
+
+/*------------Display-----------------*/
+.calc__display {
+  width: 100%;
+  height: 5.625rem;
+  background: var(--clr-screen-bg);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 0.5rem;
+  margin-top: 2rem;
+}
+.calc__text {
+  text-align: right;
+  padding: 1rem;
+  font-size: var(--fs-size-lg);
+  color: var(--clr-text-heading);
+}
+@media only screen and (min-width: 1024px) {
+  .calc__text {
+    font-size: var(--fs-size-xl);
+  }
+}
+
+/*---------------Keypad Section----------------*/
+.calc__keypad {
+  margin: 1.5rem 0;
+  background: var(--clr-screen-bg);
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  display: grid;
+  gap: 0.75rem;
+}
+.calc__keypad button {
+  font-size: var(--fs-size-md);
+  font-weight: var(--fw-weight-bold);
+  color: var(--clr-text-120);
+  background: var(--clr-key-bg-130);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: inset 0 -0.25rem 0 var(--clr-key-shadow-130);
+  border: 0;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+@media only screen and (min-width: 1024px) {
+  .calc__keypad button {
+    font-size: 1.25rem;
+  }
+}
+.calc__keypad button:active {
+  transform: scale(0.9);
+}
+
+.calc__first-row button:last-child,
+.calc__fifth-row button:first-child {
+  color: white;
+  background: var(--clr-key-bg-100);
+  box-shadow: inset 0 -0.25rem 0 var(--clr-key-shadow-100);
+  font-size: var(--fs-size-sm);
+  font-weight: var(--fw-weight-bold);
+  text-transform: uppercase;
+}
+@media only screen and (min-width: 1024px) {
+  .calc__first-row button:last-child,
+.calc__fifth-row button:first-child {
+    font-size: 1.25rem;
+  }
+}
+
+.calc__first-row,
+.calc__second-row,
+.calc__third-row,
+.calc__fourth-row,
+.calc__fifth-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.calc__fifth-row button:first-child {
+  grid-column: span 2;
+}
+
+.calc__fifth-row button:last-child {
+  grid-column: span 2;
+  color: var(--clr-text-100);
+  background: var(--clr-key-bg-120);
+  box-shadow: inset 0 -0.25rem 0 var(--clr-key-shadow-120);
+}
+
+/*-------------------Header Section-----------------*/
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.header__wrapper h1 {
+  color: var(--clr-text-heading);
+  font-size: var(--fs-size-lg);
+}
+
+/*# sourceMappingURL=main.css.map */
