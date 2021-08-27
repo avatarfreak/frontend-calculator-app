@@ -1,0 +1,25 @@
+@use '../function' as *;
+
+/*------------Display-----------------*/
+.calc {
+  &__display {
+    width: 100%;
+    height: to-rem(90px);
+    background: var(--clr-screen-bg);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-radius: 0.5rem;
+    margin-top: 2rem;
+  }
+  &__text {
+    text-align: right;
+    padding: 1rem;
+    font-size: var(--fs-size-lg);
+    color: var(--clr-text-heading);
+
+    @media only screen and (min-width: 1024px) {
+      font-size: var(--fs-size-xl);
+    }
+  }
+}
