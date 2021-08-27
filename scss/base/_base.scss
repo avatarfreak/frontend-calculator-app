@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap");
+
+:root {
+  --fs-size-2xs: 0.75rem;
+  --fs-size-sm: 1rem;
+  --fs-size-md: 1.75rem;
+  --fs-size-lg: 2rem;
+  --fs-size-xl: 3rem;
+  --fw-weight-bold: 700;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Spartan", sans-serif;
+  background: var(--clr-main-bg);
+}
+
+.wrapper {
+  width: 37rem;
+  padding: 2rem 1rem;
+}
+
+:focus-visible {
+  outline: 2px dashed red;
+}
+a {
+  text-decoration: none;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  color: var(--clr-text-heading);
+}
+
+.attribution a {
+  color: var(--clr-key-bg-120);
+}
