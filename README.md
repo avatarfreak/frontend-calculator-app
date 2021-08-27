@@ -78,7 +78,7 @@ You can host your site using one of these solutions or any of our other trusted 
 ## Author
 
 - Website - [pigoat](https://www.pigoat.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/avatarfreak)
+- Frontend Mentor - [@avatarfreak](https://www.frontendmentor.io/profile/avatarfreak)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
