@@ -1,26 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="description" content="frontend challenge calculator app challenge accepted by avatarfreak">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="./app/css/main.css">
+  <script src="./app/js/script.js" defer></script>
+
   <title>Frontend Mentor | Calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
-<body>
 
+<body class="theme-one">
+  <div class="wrapper">
+    <header>
+      <div class="header__wrapper">
+        <h1>calc</h1>
+        <fieldset>
+          <legend aria-label="Select theme">Theme</legend>
+          <input type="radio" name="theme" id="one" value="one" aria-label="theme one" checked>
+          <label for="one" class="one">1</label>
+          <input type="radio" name="theme" id="two" value="two" aria-label="theme two">
+          <label for="two" class="two">2</label>
+          <input type="radio" name="theme" id="three" value="three" aria-label="theme three">
+          <label for="three" class="three">3</label>
+          <div class="slider-circle"></div>
+        </fieldset>
+      </div>
+    </header>
+    <main class="calc">
+      <div class="calc__display">
+        <p class="calc__text" aria-live="polite">0</p>
+      </div>
+      <div class="calc__keypad">
+        <div class="calc__first-row">
+          <button>7</button>
+          <button>8</button>
+          <button>9</button>
+          <button>Del</button>
+        </div>
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+        <div class="calc__second-row">
+          <button>4</button>
+          <button>5</button>
+          <button>6</button>
+          <button>+</button>
+        </div>
+
+        <div class="calc__third-row">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>-</button>
+        </div>
+
+        <div class="calc__fourth-row">
+          <button>.</button>
+          <button>0</button>
+          <button>/</button>
+          <button>x</button>
+        </div>
+
+        <div class="calc__fifth-row">
+          <button>Reset</button>
+          <button>=</button>
+        </div>
+
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://www.github.com/avatarfreak">avatarfreak</a>.
+      </div>
+    </footer>
   </div>
 </body>
+
 </html>
