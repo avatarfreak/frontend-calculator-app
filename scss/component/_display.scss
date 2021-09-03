@@ -7,16 +7,34 @@
     height: to-rem(90px);
     background: var(--clr-screen-bg);
     display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    align-items: flex-end;
+    justify-content: space-around;
     border-radius: 0.5rem;
     margin-top: 2rem;
+    flex-direction: column;
   }
-  &__text {
+  &__text-previous,
+  &__text-current {
+    display: block;
+    background: transparent;
+    border: 0;
     text-align: right;
-    padding: 1rem;
-    font-size: var(--fs-size-lg);
+    padding: 0.25rem;
     color: var(--clr-text-heading);
+  }
+
+  &__text-previous {
+    font-size: var(--fs-size-sm);
+  }
+
+  &__text-current {
+    font-size: var(--fs-size-lg);
+    transition: 0.4s;
+
+    &.active {
+      transform: translateY(-0.5rem);
+      font-size: to-rem(40px);
+    }
 
     @media only screen and (min-width: 1024px) {
       font-size: var(--fs-size-xl);
