@@ -9,7 +9,8 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./app/css/main.css">
-  <script src="./app/js/script.js" defer></script>
+  <script src="./app/js/themeSwitcher.js" defer></script>
+  <script src="./app/js/calculator.js" type="module" defer></script>
 
   <title>Frontend Mentor | Calculator app</title>
 </head>
@@ -20,7 +21,7 @@
       <div class="header__wrapper">
         <h1>calc</h1>
         <fieldset>
-          <legend aria-label="Select theme">Theme</legend>
+          <legend aria-label="Select theme">Themes</legend>
           <input type="radio" name="theme" id="one" value="one" aria-label="theme one" checked>
           <label for="one" class="one">1</label>
           <input type="radio" name="theme" id="two" value="two" aria-label="theme two">
@@ -33,40 +34,41 @@
     </header>
     <main class="calc">
       <div class="calc__display">
-        <p class="calc__text" aria-live="polite">0</p>
+        <p class="calc__text-previous" aria-live="polite"></p>
+        <p class="calc__text-current" aria-live="polite">0</p>
       </div>
       <div class="calc__keypad">
         <div class="calc__first-row">
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>Del</button>
+          <button data-type="num">7</button>
+          <button data-type="num">8</button>
+          <button data-type="num">9</button>
+          <button data-del='del'>Del</button>
         </div>
 
         <div class="calc__second-row">
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>+</button>
+          <button data-type="num">4</button>
+          <button data-type="num">5</button>
+          <button data-type="num">6</button>
+          <button data-action="add">+</button>
         </div>
 
         <div class="calc__third-row">
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>-</button>
+          <button data-type='num'>1</button>
+          <button data-type='num'>2</button>
+          <button data-type='num'>3</button>
+          <button data-action="subtract">-</button>
         </div>
 
         <div class="calc__fourth-row">
-          <button>.</button>
-          <button>0</button>
-          <button>/</button>
-          <button>x</button>
+          <button data-type='decimal'>.</button>
+          <button data-type="num">0</button>
+          <button data-action="divide">/</button>
+          <button data-action="multiply">&times;</button>
         </div>
 
         <div class="calc__fifth-row">
-          <button>Reset</button>
-          <button>=</button>
+          <button data-reset='reset'>Reset</button>
+          <button data-compute="equal">=</button>
         </div>
 
       </div>
