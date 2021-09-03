@@ -173,19 +173,33 @@ label::after {
   height: 5.625rem;
   background: var(--clr-screen-bg);
   display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  align-items: flex-end;
+  justify-content: space-around;
   border-radius: 0.5rem;
   margin-top: 2rem;
+  flex-direction: column;
 }
-.calc__text {
+.calc__text-previous, .calc__text-current {
+  display: block;
+  background: transparent;
+  border: 0;
   text-align: right;
-  padding: 1rem;
-  font-size: var(--fs-size-lg);
+  padding: 0.25rem;
   color: var(--clr-text-heading);
 }
+.calc__text-previous {
+  font-size: var(--fs-size-sm);
+}
+.calc__text-current {
+  font-size: var(--fs-size-lg);
+  transition: 0.4s;
+}
+.calc__text-current.active {
+  transform: translateY(-0.5rem);
+  font-size: 2.5rem;
+}
 @media only screen and (min-width: 1024px) {
-  .calc__text {
+  .calc__text-current {
     font-size: var(--fs-size-xl);
   }
 }
